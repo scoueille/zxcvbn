@@ -1,3 +1,4 @@
+# coding: utf-8
 frequency_lists = require('./frequency_lists')
 adjacency_graphs = require('./adjacency_graphs')
 scoring = require('./scoring')
@@ -16,21 +17,23 @@ for name, lst of frequency_lists
 
 GRAPHS =
   qwerty:     adjacency_graphs.qwerty
+  azerty:     adjacency_graphs.azerty
   dvorak:     adjacency_graphs.dvorak
   keypad:     adjacency_graphs.keypad
   mac_keypad: adjacency_graphs.mac_keypad
 
 L33T_TABLE =
-  a: ['4', '@']
+  a: ['4', '@', 'à', 'â']
   b: ['8']
-  c: ['(', '{', '[', '<']
-  e: ['3']
+  c: ['(', '{', '[', '<', 'ç']
+  e: ['3', 'é', 'è', 'ê', 'ë']
   g: ['6', '9']
-  i: ['1', '!', '|']
+  i: ['1', '!', '|', 'î', 'ï']
   l: ['1', '|', '7']
-  o: ['0']
+  o: ['0', 'ô']
   s: ['$', '5']
   t: ['+', '7']
+  u: ['ù', 'ü']
   x: ['%']
   z: ['2']
 
@@ -227,7 +230,7 @@ matching =
       match.token.length > 1
 
   # ------------------------------------------------------------------------------
-  # spatial match (qwerty/dvorak/keypad) -----------------------------------------
+  # spatial match (qwerty/azerty/dvorak/keypad) ----------------------------------
   # ------------------------------------------------------------------------------
 
   spatial_match: (password, _graphs = GRAPHS) ->
@@ -244,7 +247,7 @@ matching =
       j = i + 1
       last_direction = null
       turns = 0
-      if graph_name in ['qwerty', 'dvorak'] and @SHIFTED_RX.exec(password.charAt(i))
+      if graph_name in ['qwerty', 'azerty', 'dvorak'] and @SHIFTED_RX.exec(password.charAt(i))
         # initial character is shifted
         shifted_count = 1
       else

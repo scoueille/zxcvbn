@@ -235,8 +235,8 @@ test 'spatial guesses', (t) ->
     turns: 1
     shifted_count: 0
   base_guesses = (
-    scoring.KEYBOARD_STARTING_POSITIONS *
-    scoring.KEYBOARD_AVERAGE_DEGREE *
+    scoring.KEYBOARD_US_STARTING_POSITIONS *
+    scoring.KEYBOARD_US_AVERAGE_DEGREE *
     # - 1 term because: not counting spatial patterns of length 1
     # eg for length==6, multiplier is 5 for needing to try len2,len3,..,len6
     (match.token.length - 1)
@@ -265,8 +265,8 @@ test 'spatial guesses', (t) ->
     shifted_count: 0
   guesses = 0
   L = match.token.length
-  s = scoring.KEYBOARD_STARTING_POSITIONS
-  d = scoring.KEYBOARD_AVERAGE_DEGREE
+  s = scoring.KEYBOARD_US_STARTING_POSITIONS
+  d = scoring.KEYBOARD_US_AVERAGE_DEGREE
   for i in [2..L]
     for j in [1..Math.min(match.turns, i-1)]
       guesses += nCk(i-1, j-1) * s * Math.pow(d, j)

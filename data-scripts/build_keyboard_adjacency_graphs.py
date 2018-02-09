@@ -4,7 +4,7 @@ import sys
 
 def usage():
     return '''
-constructs adjacency_graphs.coffee from QWERTY and DVORAK keyboard layouts
+constructs adjacency_graphs.coffee from QWERTY, QWERTZ and DVORAK keyboard layouts
 
 usage:
 %s adjacency_graphs.coffee
@@ -15,6 +15,13 @@ qwerty = r'''
     qQ wW eE rR tT yY uU iI oO pP [{ ]} \|
      aA sS dD fF gG hH jJ kK lL ;: '"
       zZ xX cC vV bB nN mM ,< .> /?
+'''
+
+qwertz = r'''
+^° 1! 2" 3§ 4$ 5% 6& 7/ 8( 9) 0= ß? ´`
+    qQ wW eE rR tT zZ uU iI oO pP üÜ +*
+     aA sS dD fF gG hH jJ kK lL öÖ äÄ #'
+   <> yY xX cC vV bB nN mM ,; .: -_
 '''
 
 dvorak = r'''
@@ -98,6 +105,7 @@ if __name__ == '__main__':
         f.write('adjacency_graphs = \n  ')
         lines = []
         for graph_name, args in [('qwerty', (qwerty, True)),
+                                 ('qwertz', (qwertz, True)),
                                  ('dvorak', (dvorak, True)),
                                  ('keypad', (keypad, False)),
                                  ('mac_keypad', (mac_keypad, False))]:

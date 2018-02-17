@@ -1,0 +1,8175 @@
+
+<!-- saved from url=(0033)https://lowe.github.io/tryzxcvbn/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>zxcvbn tests</title>
+
+    <script type="text/javascript" src="./explain_files/jquery.js">
+    </script><style></style>
+    <script type="text/javascript" src="./explain_files/mustache.js">
+    </script>
+    <script data-main="demo" src="./explain_files/require.js">
+    </script>
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="demo" src="./explain_files/demo.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zxcvbn" src="./explain_files/zxcvbn.js"></script></head>
+  <body>
+    <style type="text/css">
+
+      body {
+        font-family: monospace;
+      }
+
+      .match-sequence table {
+        display: inline;
+        margin-right: 30px;
+      }
+
+      .match-sequence {
+        margin-bottom: 100px;
+      }
+
+      .match-sequence > table:nth-child(odd) {
+        background-color: #ccc;
+      }
+      .match-sequence > table:nth-child(even) {
+        background-color: #eee;
+      }
+
+      #examples-container {
+        margin-top: 200px;
+      }
+
+    </style>
+    <h1>Strenght measurement in details:</h1>
+
+    <input id="search-bar" placeholder="Enter your password" type="text" size="50">
+    <div id="search-results"><table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>Jose</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">1.75587</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">0</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>34 minutes</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>6 seconds</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">Names and surnames by themselves are easy to guess</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Capitalization doesn't help very much <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'Jose'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.74819</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>male_names</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>28</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>28</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+</div>
+
+    <div id="examples-container">
+    <h1 id="examples">examples</h1>
+    <div id="results"><table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>zxcvbn</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">1.76343</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">7</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>35 minutes</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>6 seconds</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is a top-100 common password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'zxcvbn'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.75587</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>57</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>57</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>qwER43@!</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">7.95651</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>2 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">4</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>3 months</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>3 hours</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">Short keyboard patterns are easy to guess</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Use a longer keyboard pattern with more turns <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'qwER43@!'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>spatial</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>7.95651</td>
+  </tr>
+  <tr>
+    <td>graph:</td>
+    <td>qwerty</td>
+  </tr>
+  <tr>
+    <td>turns:</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>shifted count:</td>
+    <td>4</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>Tr0ub4dour&amp;3</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">7.28008</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>2 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">2</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>21 years</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>22 days</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>32 minutes</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Capitalization doesn't help very much <br>
+    - Predictable substitutions like '@' instead of 'a' don't help very much <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'Tr0ub4dour'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>4.97882</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>11905</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>l33t subs:</td>
+    <td>0 -&gt; o, 4 -&gt; a</td>
+  </tr>
+  <tr>
+    <td>un-l33ted:</td>
+    <td>troubadour</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>11905</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>4</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'&amp;3'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>correcthorsebatterystaple</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">14.43696</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">9</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>8 hours</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'correct'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.0569</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1140</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1140</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'horse'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.84572</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>701</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>701</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'battery'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.34183</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>2197</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>2197</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'staple'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.8107</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>6467</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>6467</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>coRrecth0rseba++ery9.23.2007staple$</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">20.71185</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">25</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'coRrect'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.902</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1140</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1140</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'h0rse'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.14675</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>701</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>l33t subs:</td>
+    <td>0 -&gt; o</td>
+  </tr>
+  <tr>
+    <td>un-l33ted:</td>
+    <td>horse</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>701</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>2</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'ba++ery'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.64286</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>2197</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>l33t subs:</td>
+    <td>+ -&gt; t</td>
+  </tr>
+  <tr>
+    <td>un-l33ted:</td>
+    <td>battery</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>2197</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>2</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'9.23.2007'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>date</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>4.46538</td>
+  </tr>
+  <tr>
+    <td>day:</td>
+    <td>23</td>
+  </tr>
+  <tr>
+    <td>month:</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>year:</td>
+    <td>2007</td>
+  </tr>
+  <tr>
+    <td>separator:</td>
+    <td>'.'</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'staple$'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.47567</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>surnames</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1495</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>l33t subs:</td>
+    <td>$ -&gt; s</td>
+  </tr>
+  <tr>
+    <td>un-l33ted:</td>
+    <td>staples</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1495</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>2</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>p@ssword</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">0.69897</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>3 minutes</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>less than a second</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is similar to a commonly used password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Predictable substitutions like '@' instead of 'a' don't help very much <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'p@ssword'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>0.60206</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>l33t subs:</td>
+    <td>@ -&gt; a</td>
+  </tr>
+  <tr>
+    <td>un-l33ted:</td>
+    <td>password</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>2</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>p@$$word</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">0.95424</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>5 minutes</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>less than a second</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is similar to a commonly used password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Predictable substitutions like '@' instead of 'a' don't help very much <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'p@$$word'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>0.90309</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>l33t subs:</td>
+    <td>@ -&gt; a, $ -&gt; s</td>
+  </tr>
+  <tr>
+    <td>un-l33ted:</td>
+    <td>password</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>4</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>123456</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">0.30103</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">3</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>1 minute</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>less than a second</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is a top-10 common password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'123456'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>123456789</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">0.77815</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">10</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>4 minutes</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>less than a second</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is a top-10 common password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'123456789'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>0.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>11111111</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">1.80618</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">3</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>38 minutes</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>6 seconds</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is a top-100 common password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'11111111'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.79934</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>63</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>63</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>zxcvbnm,./</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">3.58984</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>1 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>2 days</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>6 minutes</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">Straight rows of keys are easy to guess</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Use a longer keyboard pattern with more turns <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'zxcvbnm,./'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>spatial</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.58973</td>
+  </tr>
+  <tr>
+    <td>graph:</td>
+    <td>qwerty</td>
+  </tr>
+  <tr>
+    <td>turns:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>shifted count:</td>
+    <td>0</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>love88</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">4.22011</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>1 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>7 days</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>28 minutes</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>2 seconds</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is similar to a commonly used password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'love'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.81954</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>66</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>66</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'88'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>repeat</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>base_token:</td>
+    <td>'8'</td>
+  </tr>
+  <tr>
+    <td>base_guesses:</td>
+    <td>12</td>
+  </tr>
+  <tr>
+    <td>num_repeats:</td>
+    <td>2</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>angel08</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">4.35801</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>1 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>10 days</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>38 minutes</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>2 seconds</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">Common names and surnames are easy to guess</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Predictable substitutions like '@' instead of 'a' don't help very much <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'angel0'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.76492</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>male_names</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>291</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>l33t subs:</td>
+    <td>0 -&gt; o</td>
+  </tr>
+  <tr>
+    <td>un-l33ted:</td>
+    <td>angelo</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>291</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>2</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'8'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.04139</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>monkey13</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">4.11096</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>1 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">2</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>5 days</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>22 minutes</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>1 second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is a very common password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'monkey13'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>4.11093</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>12910</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>12910</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>iloveyou</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">1.68124</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>29 minutes</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>5 seconds</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is a top-100 common password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'iloveyou'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.6721</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>47</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>47</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>woaini</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">4.06232</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>1 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>5 days</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>19 minutes</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>1 second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is a very common password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'woaini'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>4.06228</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>11542</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>11542</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>wang</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">2.94596</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>9 hours</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>1 minute</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">Names and surnames by themselves are easy to guess</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'wang'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.94547</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>surnames</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>882</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>882</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>tianya</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">5.31492</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>1 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">0</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>3 months</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>6 hours</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>21 seconds</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">Common names and surnames are easy to guess</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'ti'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'anya'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.29336</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>female_names</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1965</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1965</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>zhang198822</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">7.83053</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>2 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">2</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>76 years</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>3 months</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>2 hours</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">Dates are often easy to guess</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Avoid dates and years that are associated with you <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'zhang'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.50474</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>surnames</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>3197</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>3197</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'198822'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>date</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>4.02469</td>
+  </tr>
+  <tr>
+    <td>day:</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>month:</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>year:</td>
+    <td>1988</td>
+  </tr>
+  <tr>
+    <td>separator:</td>
+    <td>''</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>li4478</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">6</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>1 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>1 year</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>1 day</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>2 minutes</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'li4478'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>6</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>a6a4Aa8a</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">8</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>2 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>4 months</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>3 hours</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'a6a4Aa8a'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>8</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>b6b4Bb8b</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">8</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>2 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">0</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>4 months</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>3 hours</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'b6b4Bb8b'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>8</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>z6z4Zz8z</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">8</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>2 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>4 months</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>3 hours</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'z6z4Zz8z'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>8</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>aiIiAaIA</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">8</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>2 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>4 months</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>3 hours</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'aiIiAaIA'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>8</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>zxXxZzXZ</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">8</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>2 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>4 months</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>3 hours</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'zxXxZzXZ'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>8</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>pässwörd</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">8</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>2 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>4 months</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>3 hours</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'pässwörd'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>8</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>alpha bravo charlie delta</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">17.7335</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">7</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>2 years</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'alpha'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.82995</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>676</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>676</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">' bravo '</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>7</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'charlie'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>45</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>45</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">' '</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.04139</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'delta'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.07591</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1191</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1191</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">71</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">104</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>71</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>a b c 1 2 3</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">11</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">2</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>4 months</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>10 seconds</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'a b c 1 2 3'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>11</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>correct-horse-battery-staple</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">20.33003</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">8</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'correct'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.0569</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1140</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1140</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'-horse-'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>7</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'battery'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.34183</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>2197</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>2197</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'-'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.04139</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'staple'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.8107</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>6467</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>6467</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>correct.horse.battery.staple</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">20.33003</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">6</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'correct'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.0569</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1140</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1140</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'.horse.'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>7</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'battery'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.34183</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>2197</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>2197</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'.'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.04139</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'staple'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.8107</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>6467</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>6467</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>correct,horse,battery,staple</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">20.33003</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">5</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'correct'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.0569</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1140</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1140</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">',horse,'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>7</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'battery'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.34183</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>2197</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>2197</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">','</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.04139</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'staple'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.8107</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>6467</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>6467</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>correct~horse~battery~staple</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">20.33003</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">5</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'correct'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.0569</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1140</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1140</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'~horse~'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>7</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'battery'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.34183</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>2197</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>2197</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'~'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.04139</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'staple'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.8107</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>6467</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>6467</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>WhyfaultthebardifhesingstheArgives’harshfate?</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">40.75446</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">14</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'Why'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.98227</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>48</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>48</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'fault'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.63849</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>435</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>435</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'the'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'bardifhesingst'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>14</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'heAr'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.8169</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>164</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>164</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'gives'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.9154</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>823</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>823</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'’harshfate?'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>11</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>Eupithes’sonAntinousbroketheirsilence</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">29.048</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">9</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'Eupithes’sonAntinous'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>20</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'broke'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.74351</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>554</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>554</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'their'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>28</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>28</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'silence'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.22531</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1680</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1680</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>Athena lavished a marvelous splendor</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">24.18462</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">11</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'Athena'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.32387</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>female_names</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1054</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1054</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">' '</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.04139</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'lavished'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>4.23378</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>17131</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>17131</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">' a '</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'marvelous'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.45423</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>2846</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>2846</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">' '</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.04139</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'splendor'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.92696</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>8452</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>8452</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>buckmulliganstenderchant</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">16.69761</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">4</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>2 months</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'buck'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.81757</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>surnames</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>657</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>657</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'mulligan'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.38578</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>surnames</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>2431</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>2431</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'s'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.04139</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'tender'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.46553</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>2921</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>2921</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'chant'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.8109</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>6470</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>6470</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>seethenthatyewalkcircumspectly</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">25.57054</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">6</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'see'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>49</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>49</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'then'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.79239</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>62</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>62</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'that'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'yewalkcircumspectly'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>19</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>LihiandthepeopleofMorianton</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">21.44647</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">8</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'Lihiand'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>7</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'the'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'people'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.96848</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>93</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>93</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'ofMori'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>6</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'anton'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.69984</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>male_names</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>501</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>501</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>establishedinthecityofZarahemla</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">21.51744</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">9</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'established'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.40483</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>254</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>254</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'inthe'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>5</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'city'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.73239</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>english_wikipedia</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>54</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>54</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'ofZarahemla'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>11</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>!"£$%^&amp;*()</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">7.01611</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>2 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>12 years</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>12 days</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>17 minutes</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">Straight rows of keys are easy to guess</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Use a longer keyboard pattern with more turns <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'!"£'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'$%^&amp;*()'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>spatial</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.71466</td>
+  </tr>
+  <tr>
+    <td>graph:</td>
+    <td>qwerty</td>
+  </tr>
+  <tr>
+    <td>turns:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>shifted count:</td>
+    <td>7</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>D0g..................</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">5.64542</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>1 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">4</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>6 months</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>12 hours</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>44 seconds</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">Repeats like "aaa" are easy to guess</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Avoid repeated words and characters <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'D0g'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'..................'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>repeat</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.33445</td>
+  </tr>
+  <tr>
+    <td>base_token:</td>
+    <td>'.'</td>
+  </tr>
+  <tr>
+    <td>base_guesses:</td>
+    <td>12</td>
+  </tr>
+  <tr>
+    <td>num_repeats:</td>
+    <td>18</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>abcdefghijk987654321</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">4.17609</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>1 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">13</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>6 days</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>25 minutes</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>2 seconds</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">Sequences like abc or 6543 are easy to guess</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Avoid sequences <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'abcdefghijk'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>sequence</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>sequence-name:</td>
+    <td>lower</td>
+  </tr>
+  <tr>
+    <td>sequence-size</td>
+    <td>26</td>
+  </tr>
+  <tr>
+    <td>ascending:</td>
+    <td>true</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'987654321'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>neverforget13/3/1997</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">9.53459</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>3 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">6</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>11 years</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>4 days</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'never'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.87506</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>75</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>75</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'forget'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.40312</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>253</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>253</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'13/3/1997'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>date</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>4.46538</td>
+  </tr>
+  <tr>
+    <td>day:</td>
+    <td>13</td>
+  </tr>
+  <tr>
+    <td>month:</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>year:</td>
+    <td>1997</td>
+  </tr>
+  <tr>
+    <td>separator:</td>
+    <td>'/'</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>1qaz2wsx3edc</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">3.00043</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">2</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>10 hours</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>2 minutes</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is a very common password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'1qaz2wsx3edc'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1000</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1000</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>temppass22</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">5.58827</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>1 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>5 months</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>11 hours</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>39 seconds</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is similar to a commonly used password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'temppass'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.57692</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>3775</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>3775</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'22'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>repeat</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>base_token:</td>
+    <td>'2'</td>
+  </tr>
+  <tr>
+    <td>base_guesses:</td>
+    <td>12</td>
+  </tr>
+  <tr>
+    <td>num_repeats:</td>
+    <td>2</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>briansmith</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">4.17609</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>1 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>6 days</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>25 minutes</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>2 seconds</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">Common names and surnames are easy to guess</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'brian'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>male_names</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>20</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>20</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'smith'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>surnames</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>briansmith4mayor</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">10.17898</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">2</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>47 years</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>17 days</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>2 seconds</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'brian'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>male_names</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>20</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>20</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'smith'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>surnames</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'4mayor'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>6</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>password1</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">2.27875</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>2 hours</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>19 seconds</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is a very common password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'password1'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.27646</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>189</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>189</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>viking</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">2.38739</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>2 hours</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>24 seconds</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is a very common password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'viking'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.38561</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>243</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>243</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>thx1138</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">2.32015</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>2 hours</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>21 seconds</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is a very common password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'thx1138'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.31806</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>208</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>208</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>ScoRpi0ns</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">5.46189</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>1 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>4 months</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>8 hours</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>29 seconds</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Predictable substitutions like '@' instead of 'a' don't help very much <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'ScoRpi0n'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>4.10421</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>227</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>l33t subs:</td>
+    <td>0 -&gt; o</td>
+  </tr>
+  <tr>
+    <td>un-l33ted:</td>
+    <td>scorpion</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>227</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>28</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>2</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'s'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.04139</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>do you know</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">9</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>3 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>3 years</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>1 day</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'do you '</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>7</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'know'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>us_tv_and_film</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>ryanhunter2000</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">8.00325</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>3 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">2</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>4 months</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>3 hours</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'ryan'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>male_names</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>49</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>49</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'hunter'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>37</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>37</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'2000'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>regex</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>regex_name:</td>
+    <td>recent_year</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>rianhunter2000</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">8.39794</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>3 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">2</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>9 months</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>7 hours</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'rian'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>4</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'hunter'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>37</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>37</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'2000'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>regex</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>regex_name:</td>
+    <td>recent_year</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>asdfghju7654rewq</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">8.96529</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>3 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">3</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>3 years</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>1 day</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'asdfghju7654rewq'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>spatial</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>8.96529</td>
+  </tr>
+  <tr>
+    <td>graph:</td>
+    <td>qwerty</td>
+  </tr>
+  <tr>
+    <td>turns:</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>shifted count:</td>
+    <td>0</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>AOEUIDHG&amp;*()LS_</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">9.10726</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>3 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">2</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>4 years</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>1 day</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'AOEUIDHG&amp;*()LS_'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>spatial</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>9.10726</td>
+  </tr>
+  <tr>
+    <td>graph:</td>
+    <td>dvorak</td>
+  </tr>
+  <tr>
+    <td>turns:</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>shifted count:</td>
+    <td>15</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>12345678</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">0.60206</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">2</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>2 minutes</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>less than a second</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is a top-10 common password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'12345678'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>0.47712</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>defghi6789</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">4.40824</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>1 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">2</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>11 days</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>43 minutes</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>3 seconds</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">Sequences like abc or 6543 are easy to guess</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Avoid sequences <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'defghi'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>sequence</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.19312</td>
+  </tr>
+  <tr>
+    <td>sequence-name:</td>
+    <td>lower</td>
+  </tr>
+  <tr>
+    <td>sequence-size</td>
+    <td>26</td>
+  </tr>
+  <tr>
+    <td>ascending:</td>
+    <td>true</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'6789'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>sequence</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>sequence-name:</td>
+    <td>digits</td>
+  </tr>
+  <tr>
+    <td>sequence-size</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>ascending:</td>
+    <td>true</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>rosebud</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">2.43457</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">0</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>3 hours</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>27 seconds</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is a very common password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'rosebud'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.43297</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>271</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>271</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>Rosebud</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">2.7348</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>5 hours</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>54 seconds</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is a very common password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Capitalization doesn't help very much <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'Rosebud'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.734</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>271</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>271</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>ROSEBUD</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">2.7348</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>5 hours</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>54 seconds</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is a very common password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - All-uppercase is almost as easy to guess as all-lowercase <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'ROSEBUD'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.734</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>271</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>271</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>rosebuD</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">2.7348</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>0 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">0</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>5 hours</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>54 seconds</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is a very common password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'rosebuD'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.734</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>271</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>271</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>ros3bud99</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">4.80754</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>1 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>27 days</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>2 hours</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>6 seconds</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is similar to a commonly used password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Predictable substitutions like '@' instead of 'a' don't help very much <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'ros3bud'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>2.734</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>271</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>l33t subs:</td>
+    <td>3 -&gt; e</td>
+  </tr>
+  <tr>
+    <td>un-l33ted:</td>
+    <td>rosebud</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>271</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>2</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'99'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>repeat</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>base_token:</td>
+    <td>'9'</td>
+  </tr>
+  <tr>
+    <td>base_guesses:</td>
+    <td>12</td>
+  </tr>
+  <tr>
+    <td>num_repeats:</td>
+    <td>2</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>r0s3bud99</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">5.07335</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>1 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>2 months</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>3 hours</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>12 seconds</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td>warning: </td>
+  <td colspan="2">This is similar to a commonly used password</td>
+</tr>
+<tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Predictable substitutions like '@' instead of 'a' don't help very much <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'r0s3bud'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.03503</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>271</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>l33t subs:</td>
+    <td>0 -&gt; o, 3 -&gt; e</td>
+  </tr>
+  <tr>
+    <td>un-l33ted:</td>
+    <td>rosebud</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>271</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>4</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'99'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>repeat</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>base_token:</td>
+    <td>'9'</td>
+  </tr>
+  <tr>
+    <td>base_guesses:</td>
+    <td>12</td>
+  </tr>
+  <tr>
+    <td>num_repeats:</td>
+    <td>2</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>R0$38uD99</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">6.11754</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>2 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">2</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>1 year</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>2 days</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>2 minutes</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>less than a second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  <tr>
+  <td style="vertical-align: top">suggestions:</td>
+  <td colspan="2">
+    - Add another word or two. Uncommon words are better. <br>
+    - Predictable substitutions like '@' instead of 'a' don't help very much <br>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'R0$38uD'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>4.11421</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>271</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>l33t subs:</td>
+    <td>0 -&gt; o, 3 -&gt; e, 8 -&gt; b, $ -&gt; s</td>
+  </tr>
+  <tr>
+    <td>un-l33ted:</td>
+    <td>rosebud</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>271</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>16</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'99'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>repeat</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>base_token:</td>
+    <td>'9'</td>
+  </tr>
+  <tr>
+    <td>base_guesses:</td>
+    <td>12</td>
+  </tr>
+  <tr>
+    <td>num_repeats:</td>
+    <td>2</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>verlineVANDERMARK</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">10.38918</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">2</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>76 years</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>28 days</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>2 seconds</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'verline'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>3.56038</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>female_names</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>3634</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>3634</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'VANDER'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>4.3499</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>passwords</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>11191</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>11191</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+<table>
+  <tbody><tr>
+    <td colspan="2">'MARK'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>dictionary</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>1.69897</td>
+  </tr>
+  <tr>
+    <td>dictionary_name:</td>
+    <td>male_names</td>
+  </tr>
+  <tr>
+    <td>rank:</td>
+    <td>14</td>
+  </tr>
+  <tr>
+    <td>reversed:</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>base-guesses:</td>
+    <td>14</td>
+  </tr>
+  <tr>
+    <td>uppercase-variations:</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>l33t-variations:</td>
+    <td>1</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>eheuczkqyq</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">10</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>3 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">1</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>31 years</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>12 days</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>1 second</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'eheuczkqyq'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>10</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>rWibMFACxAUGZmxhVncy</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">20</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">2</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'rWibMFACxAUGZmxhVncy'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>20</td>
+  </tr>
+</tbody></table>
+</div>
+<table class="result">
+  <tbody><tr>
+    <td>password: </td>
+    <td colspan="2"><strong>Ba9ZyWABu99[BK#6MBgbH88Tofv)vs$w</strong></td>
+  </tr>
+  <tr>
+    <td>guesses_log10: </td>
+    <td colspan="2">32</td>
+  </tr>
+  <tr>
+    <td>score: </td>
+    <td>4 / 4</td>
+  </tr><tr>
+    <td>function runtime (ms): </td>
+    <td colspan="2">13</td>
+  </tr>
+  <tr>
+    <td colspan="3">guess times:</td>
+  </tr>
+  <tr>
+  <td>100 / hour:</td>
+  <td>centuries</td>
+  <td> (throttled online attack)</td>
+</tr>
+<tr>
+  <td>10&nbsp; / second:</td>
+  <td>centuries</td>
+  <td> (unthrottled online attack)</td>
+</tr>
+<tr>
+  <td>10k / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, slow hash, many cores)</td>
+</tr><tr>
+  <td>10B / second:</td>
+  <td>centuries</td>
+  <td> (offline attack, fast hash, many cores)</td>
+</tr>
+  
+  <tr>
+    <td colspan="3"><strong>match sequence:</strong></td>
+  </tr>
+</tbody></table>
+<div class="match-sequence">
+<table>
+  <tbody><tr>
+    <td colspan="2">'Ba9ZyWABu99[BK#6MBgbH88Tofv)vs$w'</td>
+  </tr>
+  <tr>
+    <td>pattern:</td>
+    <td>bruteforce</td>
+  </tr>
+  <tr>
+    <td>guesses_log10:</td>
+    <td>32</td>
+  </tr>
+</tbody></table>
+</div>
+</div>
+
+  
+
+</div></body></html>

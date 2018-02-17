@@ -278,17 +278,22 @@ scoring =
     guesses *= 4 if match.separator
     guesses
 
-  KEYBOARD_AVERAGE_DEGREE: calc_average_degree(adjacency_graphs.qwerty)
+  KEYBOARD_US_AVERAGE_DEGREE: calc_average_degree(adjacency_graphs.qwerty)
+  KEYBOARD_DE_AVERAGE_DEGREE: calc_average_degree(adjacency_graphs.qwertz)
   # slightly different for keypad/mac keypad, but close enough
   KEYPAD_AVERAGE_DEGREE: calc_average_degree(adjacency_graphs.keypad)
 
-  KEYBOARD_STARTING_POSITIONS: (k for k,v of adjacency_graphs.qwerty).length
+  KEYBOARD_US_STARTING_POSITIONS: (k for k,v of adjacency_graphs.qwerty).length
+  KEYBOARD_DE_STARTING_POSITIONS: (k for k,v of adjacency_graphs.qwertz).length
   KEYPAD_STARTING_POSITIONS: (k for k,v of adjacency_graphs.keypad).length
 
   spatial_guesses: (match) ->
     if match.graph in ['qwerty', 'dvorak']
-      s = @KEYBOARD_STARTING_POSITIONS
-      d = @KEYBOARD_AVERAGE_DEGREE
+      s = @KEYBOARD_US_STARTING_POSITIONS
+      d = @KEYBOARD_US_AVERAGE_DEGREE
+    else if match.graph in ['qwertz']
+      s = @KEYBOARD_DE_STARTING_POSITIONS
+      d = @KEYBOARD_DE_AVERAGE_DEGREE
     else
       s = @KEYPAD_STARTING_POSITIONS
       d = @KEYPAD_AVERAGE_DEGREE

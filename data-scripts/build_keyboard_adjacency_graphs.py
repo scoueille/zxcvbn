@@ -22,6 +22,11 @@ qwertz = r'''
     qQ wW eE rR tT zZ uU iI oO pP üÜ +*
      aA sS dD fF gG hH jJ kK lL öÖ äÄ #'
    <> yY xX cC vV bB nN mM ,; .: -_
+azerty = ur'''
+²~ &1 e2 "3 '4 (5 -6 e7 _8 ç9 a0 )° +=
+    aA zZ eE rR tT yY uU iI oO pP ^" $£
+     qQ sS dD fF gG hH jJ kK lL mM u% *µ
+   <> wW xX cC vV bB nN ,? ;. :/ !§
 '''
 
 dvorak = r'''
@@ -106,6 +111,7 @@ if __name__ == '__main__':
         lines = []
         for graph_name, args in [('qwerty', (qwerty, True)),
                                  ('qwertz', (qwertz, True)),
+                                 ('azerty', (azerty, True)),
                                  ('dvorak', (dvorak, True)),
                                  ('keypad', (keypad, False)),
                                  ('mac_keypad', (mac_keypad, False))]:

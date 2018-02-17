@@ -17,6 +17,7 @@ for name, lst of frequency_lists
 GRAPHS =
   qwerty:     adjacency_graphs.qwerty
   qwertz:     adjacency_graphs.qwertz
+  azerty:     adjacency_graphs.azerty
   dvorak:     adjacency_graphs.dvorak
   keypad:     adjacency_graphs.keypad
   mac_keypad: adjacency_graphs.mac_keypad

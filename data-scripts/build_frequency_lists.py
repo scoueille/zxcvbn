@@ -35,13 +35,13 @@ DICTIONARIES = dict(
     it_tv_and_film    = 500,
     es_tv_and_film    = 500,
     pt_tv_and_film    = 500,
-    fr_tv_and_film    = 6000,
+    fr_tv_and_film    = 15000,
     passwords         = 30000,
     surnames          = 10000,
     male_names        = None,
     female_names      = None,
     french_names      = None, # From Wikipedia
-    english_wikipedia = 10000,
+    english_wikipedia = 9000,
 )
 
 # returns {list_name: {token: rank}}, as tokens and ranks occur in each file.

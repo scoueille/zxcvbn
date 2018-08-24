@@ -190,6 +190,7 @@ scoring =
     guesses: guesses
     guesses_log10: @log10 guesses
     sequence: optimal_match_sequence
+    complexity: @complexity password
 
   # ------------------------------------------------------------------------------
   # guess estimation -- one function per match pattern ---------------------------
@@ -213,8 +214,47 @@ scoring =
       date:       @date_guesses
     guesses = estimation_functions[match.pattern].call this, match
     match.guesses = Math.max guesses, min_guesses
-    match.guesses_log10 = @log10 match.guesses
+    match.guesses_log10 = @log10 match.guessesth
     match.guesses
+
+  complexity: (password) ->
+
+    # step through password or match token and assess character type and set a flag
+    # possible types are
+    # 	lower case alpha
+    # 	upper case alpha
+    # 	digits
+    # 	symbols
+    for i in [0..password.length-1] 
+      if (password.charCodeAt(i) > 64 and password.charCodeAt(i) < 91) and not isalphau?
+        isalphau = 1
+      else if (password.charCodeAt(i) > 96 and password.charCodeAt(i) < 123) and not isalphal?
+        isalphal = 1
+      else if (password.charCodeAt(i) > 47 and password.charCodeAt(i) < 58) and not isnumeric?
+        isnumeric = 1
+      else if (password.charCodeAt(i) > 32 and password.charCodeAt(i) < 48) and not issymbol?
+        issymbol = 1
+      else if (password.charCodeAt(i) > 57 and password.charCodeAt(i) < 65) and not issymbol?
+        issymbol = 1
+      else if (password.charCodeAt(i) > 90 and password.charCodeAt(i) < 97) and not issymbol?
+        issymbol = 1
+      else if (password.charCodeAt(i) > 122 and password.charCodeAt(i) < 127) and not issymbol?
+        issymbol = 1
+      else if password.charCodeAt(i) == 32 and not issymbol?
+        issymbol = 1
+
+    result = 0
+    if isalphal?
+      result += 1
+    if isalphau?
+      result += 1
+    if isnumeric?
+      result += 1
+    if issymbol?
+      result += 1
+
+    mixedChars: result
+    length: password.length
 
   bruteforce_guesses: (match) ->
     guesses = Math.pow BRUTEFORCE_CARDINALITY, match.token.length
@@ -280,11 +320,13 @@ scoring =
 
   KEYBOARD_US_AVERAGE_DEGREE: calc_average_degree(adjacency_graphs.qwerty)
   KEYBOARD_DE_AVERAGE_DEGREE: calc_average_degree(adjacency_graphs.qwertz)
+  KEYBOARD_FR_AVERAGE_DEGREE: calc_average_degree(adjacency_graphs.azerty)
   # slightly different for keypad/mac keypad, but close enough
   KEYPAD_AVERAGE_DEGREE: calc_average_degree(adjacency_graphs.keypad)
 
   KEYBOARD_US_STARTING_POSITIONS: (k for k,v of adjacency_graphs.qwerty).length
   KEYBOARD_DE_STARTING_POSITIONS: (k for k,v of adjacency_graphs.qwertz).length
+  KEYBOARD_FR_STARTING_POSITIONS: (k for k,v of adjacency_graphs.azerty).length
   KEYPAD_STARTING_POSITIONS: (k for k,v of adjacency_graphs.keypad).length
 
   spatial_guesses: (match) ->
@@ -294,6 +336,9 @@ scoring =
     else if match.graph in ['qwertz']
       s = @KEYBOARD_DE_STARTING_POSITIONS
       d = @KEYBOARD_DE_AVERAGE_DEGREE
+    else if match.graph in ['azerty']
+      s = @KEYBOARD_FR_STARTING_POSITIONS
+      d = @KEYBOARD_FR_AVERAGE_DEGREE
     else
       s = @KEYPAD_STARTING_POSITIONS
       d = @KEYPAD_AVERAGE_DEGREE

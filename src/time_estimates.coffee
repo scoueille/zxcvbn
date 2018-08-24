@@ -1,5 +1,7 @@
+time_estimates_i18n = require('./time_estimates_i18n')
+
 time_estimates =
-  estimate_attack_times: (guesses) ->
+  estimate_attack_times: (guesses, complexity, language = "en") ->
     crack_times_seconds =
       online_throttling_100_per_hour: guesses / (100 / 3600)
       online_no_throttling_10_per_second: guesses / 10
@@ -8,14 +10,14 @@ time_estimates =
 
     crack_times_display = {}
     for scenario, seconds of crack_times_seconds
-      crack_times_display[scenario] = @display_time seconds
+      crack_times_display[scenario] = @display_time seconds, language
 
     crack_times_seconds: crack_times_seconds
     crack_times_display: crack_times_display
-    score: @guesses_to_score guesses
+    score: @guesses_to_score guesses, complexity
 
 
-  guesses_to_score: (guesses) ->
+  guesses_to_score: (guesses, complexity) ->
     DELTA = 5
     if guesses < 1e3 + DELTA
       # risky password: "too guessable"
@@ -23,7 +25,7 @@ time_estimates =
     else if guesses < 1e6 + DELTA
       # modest protection from throttled online attacks: "very guessable"
       1
-    else if guesses < 1e8 + DELTA
+    else if guesses < 1e8 + DELTA or complexity.mixedChars < 3 or complexity.length < 8
       # modest protection from unthrottled online attacks: "somewhat guessable"
       2
     else if guesses < 1e10 + DELTA
@@ -34,7 +36,11 @@ time_estimates =
       # strong protection from offline attacks under same scenario: "very unguessable"
       4
 
-  display_time: (seconds) ->
+  display_time: (seconds, language) ->
+    @messages = time_estimates_i18n.en
+    if (language && language of time_estimates_i18n)
+      @messages = time_estimates_i18n[language]
+
     minute = 60
     hour = minute * 60
     day = hour * 24
@@ -42,28 +48,37 @@ time_estimates =
     year = month * 12
     century = year * 100
     [display_num, display_str] = if seconds < 1
-      [null, 'less than a second']
+      [null, @get_message(null, 'less_a_second')]
     else if seconds < minute
       base = Math.round seconds
-      [base, "#{base} second"]
+      [base, @get_message(base, "second")]
     else if seconds < hour
       base = Math.round seconds / minute
-      [base, "#{base} minute"]
+      [base, @get_message(base, "minute")]
     else if seconds < day
       base = Math.round seconds / hour
-      [base, "#{base} hour"]
+      [base, @get_message(base, "hour")]
     else if seconds < month
       base = Math.round seconds / day
-      [base, "#{base} day"]
+      [base, @get_message(base, "day")]
     else if seconds < year
       base = Math.round seconds / month
-      [base, "#{base} month"]
+      [base, @get_message(base, "month")]
     else if seconds < century
       base = Math.round seconds / year
-      [base, "#{base} year"]
+      [base, @get_message(base, "year")]
     else
-      [null, 'centuries']
-    display_str += 's' if display_num? and display_num != 1
+      [null, @get_message(null, 'centuries')]
     display_str
+
+  get_message: (base, key) ->
+    if not base? 
+      @messages[key]
+    else if base == 1 and @messages[key]?
+      @messages[key].replace /%1%/, base
+    else if base > 1 and @messages[key]?
+      @messages[key.concat '_n'].replace /%1%/, base
+    else
+      throw new Error("unknown message: #{key}")
 
 module.exports = time_estimates

@@ -51,9 +51,9 @@ feedback_i18n =
       similar_to_common_password: 'C\'est similaire à un mot de passe courant. '
       a_word_is_easy: 'Méfiez-vous : les mots isolés sont faciles à deviner. '
       names_are_easy: 'Méfiez-vous : les noms et prénoms sont faciles à deviner. '
-      common_names_are_easy: 'Méfiez-vous : les noms et prénoms communs sont faciles à deviner. '
-      capitalization_doesnt_help: 'Les caractères en majuscule n\'aident pas beaucoup. '
-      all_uppercase_doesnt_help: 'Saviez-vous qu\'un code tout en majuscules est presque aussi facile à deviner qu\'un code tout en minuscule ? '
+      common_names_are_easy:  'Méfiez-vous : les noms et prénoms communs sont faciles à deviner. '
+      capitalization_doesnt_help: 'Commencer un mot par une majuscule n\'aide pas beaucoup. '
+      all_uppercase_doesnt_help: 'Saviez-vous qu\'un mot tout en majuscules est presque aussi facile à deviner qu\'un mot tout en minuscules ? '
       reverse_doesnt_help: 'Ecrire les mots à l\'envers ne rend pas votre mot de passe plus difficile à deviner, vous savez :) '
       substitution_doesnt_help: 'Les substitutions prévisibles (un \'@\' au lieu d\'un \'a\') n\'aident malheureusement pas à rendre les mots de passe plus forts…'
 
